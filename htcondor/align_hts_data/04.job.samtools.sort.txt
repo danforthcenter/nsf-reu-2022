@@ -1,0 +1,19 @@
+# HTCondor samtools sort job
+universe       = vanilla
+getenv         = true
+
+name           = samtools.sort
+cpus           = 1
+memory         = 2G
+
+log            = $(name).log
+error          = $(name).err
+output         = sviridis.alignment.sorted.bam
+
+request_cpus   = $(cpus)
+request_memory = $(memory)
+
+executable     = /bioinfo/bin/samtools
+arguments      = sort -m $(memory) sviridis.alignment.bam
+
+queue

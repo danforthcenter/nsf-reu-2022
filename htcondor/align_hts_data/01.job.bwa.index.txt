@@ -1,0 +1,15 @@
+# HTCondor bwa index job
+universe       = vanilla
+getenv         = true
+
+log            = bwa.index.log
+error          = bwa.index.err
+output         = bwa.index.out
+
+request_cpus   = 1
+request_memory = 1G
+
+executable     = /bioinfo/bin/bwa
+arguments      = index Sviridis_500_v2.0.fa
+
+queue

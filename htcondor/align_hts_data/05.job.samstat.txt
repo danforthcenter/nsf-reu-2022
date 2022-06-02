@@ -1,0 +1,19 @@
+# bwa index
+universe       = vanilla
+getenv         = true
+
+name           = samstat
+cpus           = 1
+memory         = 1G
+
+log            = $(name).log
+error          = $(name).err
+output         = $(name).out
+
+request_cpus   = $(cpus)
+request_memory = $(memory)
+
+executable     = /bioinfo/bin/samstat
+arguments      = sviridis.alignment.sorted.bam
+
+queue

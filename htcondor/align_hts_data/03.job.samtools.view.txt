@@ -1,0 +1,18 @@
+# HTCondor samtools view job
+universe       = vanilla
+getenv         = true
+
+name           = samtools.view
+cpus           = 1
+
+log            = $(name).log
+error          = $(name).err
+output         = sviridis.alignment.bam
+
+request_cpus   = $(cpus)
+request_memory = 1G
+
+executable     = /bioinfo/bin/samtools
+arguments      = view -b sviridis.alignment.sam
+
+queue

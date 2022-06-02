@@ -1,0 +1,18 @@
+# HTCondor bwa mem job
+universe       = vanilla
+getenv         = true
+
+name           = bwa.mem
+cpus           = 4
+
+log            = $(name).log
+error          = $(name).err
+output         = sviridis.alignment.sam
+
+request_cpus   = $(cpus)
+request_memory = 1G
+
+executable     = /bioinfo/bin/bwa
+arguments      = mem -t $(cpus) Sviridis_500_v2.0.fa Sviridis_81-79.fastq.gz
+
+queue

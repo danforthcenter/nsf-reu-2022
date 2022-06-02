@@ -1,0 +1,10 @@
+JOB bwa_index     01.job.bwa.index.txt
+JOB bwa_mem       02.job.bwa.mem.txt
+JOB samtools_view 03.job.samtools.view.txt
+JOB samtools_sort 04.job.samtools.sort.txt
+JOB samstat       05.job.samstat.txt
+
+PARENT bwa_index     CHILD bwa_mem
+PARENT bwa_mem       CHILD samtools_view
+PARENT samtools_view CHILD samtools_sort
+PARENT samtools_sort CHILD samstat
